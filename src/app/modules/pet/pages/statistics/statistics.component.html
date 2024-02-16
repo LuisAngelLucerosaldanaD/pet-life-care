@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mis Estadísticas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="w-full h-full">
+    <ion-card>
+      <ion-card-content>
+        <div class="h-full w-full flex flex-col">
+          <div class="w-full flex gap-4 border-b border-stone-400 pb-1">
+            <div>
+              <img class="w-12 h-12 rounded-full"
+                   src="https://th.bing.com/th/id/R.4b954680a57100a74c7eb9340c76c43b?rik=ztjlmucrXhddvw&pid=ImgRaw&r=0"
+                   alt="logo mascota">
+            </div>
+            <div>
+              <div class="flex flex-col">
+                <span class="font-bold">Abel</span>
+                <small>Golden Retriever</small>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full pt-2">
+            <ion-chip class="flex-1 flex justify-center">
+              <ion-label>
+                <div class="flex flex-col p-0.5 items-center">
+                  <small class="font-bold">Peso</small>
+                  <span>80Kg</span>
+                </div>
+              </ion-label>
+            </ion-chip>
+            <ion-chip class="flex-1 flex justify-center">
+              <ion-label>
+                <div class="flex flex-col p-0.5 items-center">
+                  <small class="font-bold">Altura</small>
+                  <span>52 cm</span>
+                </div>
+              </ion-label>
+            </ion-chip>
+            <ion-chip class="flex-1 flex justify-center">
+              <ion-label>
+                <div class="flex flex-col p-0.5 items-center">
+                  <small class="font-bold">Edad</small>
+                  <span>2</span>
+                </div>
+              </ion-label>
+            </ion-chip>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-content>
+                <div class="w-full h-full">
+                  <div class="header flex items-center gap-1">
+                    <div>
+                      <ion-icon name="footsteps-outline"></ion-icon>
+                    </div>
+                    <span>Caminar</span>
+                  </div>
+                  <div class="body">
+                    <apx-chart
+                      [series]="steepsOptions.series"
+                      [chart]="steepsOptions.chart"
+                      [plotOptions]="steepsOptions.plotOptions"
+                      [labels]="steepsOptions.labels"
+                    ></apx-chart>
+                  </div>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <ion-card-content>
+                <div class="w-full h-full">
+                  <div class="header flex items-center gap-1">
+                    <div>
+                      <ion-icon name="fast-food-outline"></ion-icon>
+                    </div>
+                    <span>Alimentación</span>
+                  </div>
+                  <div class="body">
+                    <apx-chart
+                      [series]="steepsOptions.series"
+                      [chart]="steepsOptions.chart"
+                      [plotOptions]="steepsOptions.plotOptions"
+                      [labels]="steepsOptions.labels"
+                    ></apx-chart>
+                  </div>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-content>
+                <div class="w-full h-full">
+                  <div class="header flex items-center gap-1">
+                    <div>
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </div>
+                    <span>Salud</span>
+                  </div>
+                  <div class="body">
+                    <apx-chart
+                      [series]="steepsOptions.series"
+                      [chart]="steepsOptions.chart"
+                      [plotOptions]="steepsOptions.plotOptions"
+                      [labels]="steepsOptions.labels"
+                    ></apx-chart>
+                  </div>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <ion-card-content>
+                <div class="w-full h-full">
+                  <div class="header flex items-center gap-1">
+                    <div>
+                      <ion-icon name="flame-outline"></ion-icon>
+                    </div>
+                    <span>Calorias</span>
+                  </div>
+                  <div class="body">
+                    <apx-chart
+                      [series]="steepsOptions.series"
+                      [chart]="steepsOptions.chart"
+                      [plotOptions]="steepsOptions.plotOptions"
+                      [labels]="steepsOptions.labels"
+                    ></apx-chart>
+                  </div>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

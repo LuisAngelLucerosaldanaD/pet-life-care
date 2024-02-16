@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="w-full h-full flex justify-center items-center py-8 flex-col" style="background: url('https://i.pinimg.com/736x/2b/30/6c/2b306c7f30a52eb50a754bb16139a8fa.jpg')">
+
+    <div class="w-full px-8 flex-1 flex justify-end flex-col">
+      <div><span class="text-3xl font-bold font-mono">Welcome</span></div>
+      <div><span class="text-5xl font-bold font-mono">Back</span></div>
+    </div>
+
+    <div class="w-full flex justify-center items-end flex-1">
+      <ion-card class="w-full">
+        <ion-row>
+          <ion-col size-md="9" size="12" class="welcome">
+            <ion-card-header>
+              <ion-card-title class="font-mono">Pat Life</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content [formGroup]="loginForm">
+              <div>
+                <ion-input label="Usuario" class="font-mono" labelPlacement="stacked" formControlName="username"></ion-input>
+              </div>
+              <div>
+                <ion-input label="Contraseña" class="font-mono" type="password" labelPlacement="stacked" formControlName="password"></ion-input>
+              </div>
+
+              <div style="cursor: pointer" routerLink="/register" class="font-mono">
+                <small>No tienes una cuenta? Registrate.</small>
+              </div>
+
+              <div class="mt-4 flex justify-end">
+                <ion-button shape="round" color="tertiary"  routerLink="/home" class="w-full font-mono">Sign in</ion-button>
+              </div>
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+

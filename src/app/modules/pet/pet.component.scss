@@ -1,0 +1,23 @@
+ion-tab-bar {
+  --background: #f8f8f8;
+}
+
+ion-header {
+  --background: #F5ECD7;
+  --border: none;
+  --box-shadow: none;
+}
+
+ion-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+ion-tab-bar {
+  --border: none;
+  --background: white;
+  margin: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.4),
+  0 1px 3px 0 rgba(0, 0, 0, 0.02);
+}

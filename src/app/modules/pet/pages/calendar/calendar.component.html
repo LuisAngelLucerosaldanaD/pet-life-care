@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Calendario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-full h-full py-8 px-12" style="background: #F5ECD7">
+    <div class="w-full flex justify-between items-center">
+      <div><span class="text-xl font-bold uppercase">Abel</span></div>
+      <div>
+        <img class="w-12 h-12 rounded-full"
+             src="https://th.bing.com/th/id/R.4b954680a57100a74c7eb9340c76c43b?rik=ztjlmucrXhddvw&pid=ImgRaw&r=0"
+             alt="logo mascota">
+      </div>
+    </div>
+    <div class="w-full flex gap-2">
+      <div class="flex justify-center items-center flex-col gap-1 flex-1">
+        <div><span class="date_number">18</span></div>
+        <div><span class="date_text">Mo</span></div>
+      </div>
+      <div class="flex justify-center items-center flex-col gap-1 flex-1">
+        <div><span class="date_number">19</span></div>
+        <div><span class="date_text">Tu</span></div>
+      </div>
+      <div class="flex justify-center items-center flex-col gap-1 flex-1 container_active">
+        <div><span class="date_number_active">20</span></div>
+        <div><span class="date_text_active">Wed</span></div>
+      </div>
+      <div class="flex justify-center items-center flex-col gap-1 flex-1">
+        <div><span class="date_number">21</span></div>
+        <div><span class="date_text">Th</span></div>
+      </div>
+      <div class="flex justify-center items-center flex-col gap-1 flex-1">
+        <div><span class="date_number">22</span></div>
+        <div><span class="date_text">Fr</span></div>
+      </div>
+      <div class="flex justify-center items-center flex-col gap-1 flex-1">
+        <div><span class="date_number">23</span></div>
+        <div><span class="date_text">Sa</span></div>
+      </div>
+      <div class="flex justify-center items-center flex-col gap-1 flex-1">
+        <div><span class="date_number">24</span></div>
+        <div><span class="date_text">Su</span></div>
+      </div>
+    </div>
+    <div class="mt-4 w-full flex flex-col gap-4">
+      <div class="flex flex-col">
+        <span class="font-bold text-[#1E293B]">
+          Progama de hoy
+        </span>
+        <small>
+          No olvides el horario para hoy
+        </small>
+      </div>
+      <div class="flex gap-4 flex-col w-full">
+        <div class="rounded-lg px-4 py-2 flex gap-8" style="background: #833500">
+          <div class="rounded-md h-12 w-12 flex items-center justify-center text-white" style="background: #F18F01">
+            <ion-icon name="calendar-clear-outline" size="large"></ion-icon>
+          </div>
+          <div class=" flex flex-col gap-1">
+            <div>
+              <span class="text-sm text-white">Llevar a su control mensual</span>
+            </div>
+            <div class="flex gap-2 text-white items-center">
+              <ion-icon name="time-outline"></ion-icon>
+              <div><small>12:00 - 16:00</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg px-4 py-2 flex gap-8" style="background: #833500">
+          <div class="rounded-md h-12 w-12 flex items-center justify-center text-white" style="background: #F18F01">
+            <ion-icon name="calendar-clear-outline" size="large"></ion-icon>
+          </div>
+          <div class=" flex flex-col gap-1">
+            <div>
+              <span class="text-sm text-white">Llevar a su control mensual</span>
+            </div>
+            <div class="flex gap-2 text-white items-center">
+              <ion-icon name="time-outline"></ion-icon>
+              <div><small>12:00 - 16:00</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

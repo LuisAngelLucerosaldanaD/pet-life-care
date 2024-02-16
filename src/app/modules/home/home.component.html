@@ -1,0 +1,49 @@
+<ion-menu contentId="main-content">
+  <ion-content class="ion-padding bg-white">
+    <div class="menu-header-bg"></div>
+    <div class="header-content">
+      <img src="https://s3-alpha-sig.figma.com/img/d4fd/c64e/fd70f89541b7b8f05c466404e53a1d22?Expires=1708905600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E8uwRZTTETHv1P3yYYrPjmskPVUVgb9OFnv2JS-vO9TD7ItRV5RoiaBkNGLZJtyYfoYZ-VA4ur4U7Lzz6le3Mi2psrNopEUC5DIPDLH~LnwEIgyTMNOHdKawsOn0FgtGWJCLEV-bF4SV-CpfQr8Mk7jicMOmcB10EmQAuXqN4WEDqxFeVYsgDYDL-QX8YcqReK0yvqfDopiCCt--BSBS0nFDfiaVOi9cwW~s4M~nhvpbVV30DA5kUrsAnpOP5rWPRRdesop3ZWLoc3RbTJxwc5LlnHzrvTUVkNB5IzlsBNCBnX7oWzpkhvYLyJ0Lf5kQ5hfW8pNZWyn3j3GEyMvTaA__" alt="user profile">
+      <ion-label>
+        <h2>
+          Luis Angel Lucero Saldaña
+        </h2>
+        <p>Pet lover</p>
+      </ion-label>
+    </div>
+    <ion-list lines="none" class="menu-items">
+      <ion-item>
+        <ion-icon name="paw-outline"></ion-icon>BashBoard
+      </ion-item>
+      <ion-item>
+        <ion-icon name="cart-outline"></ion-icon>Pedidos
+      </ion-item>
+      <ion-item class="active">
+        <ion-icon name="chatbox-ellipses-outline"></ion-icon>Comunidad
+      </ion-item>
+      <ion-item>
+        <ion-icon name="medkit-outline"></ion-icon>Veterinarias
+      </ion-item>
+      <ion-item>
+        <ion-icon name="cog-outline"></ion-icon>Configuración
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-tabs id="main-content">
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="pets" href="/home/pets">
+      <ion-icon name="paw-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="pets" href="/home/pets">
+      <ion-icon name="people-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="veterinary" href="/home/veterinary">
+      <ion-icon name="medkit-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

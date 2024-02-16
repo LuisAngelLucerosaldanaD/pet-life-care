@@ -1,0 +1,48 @@
+.date_number {
+  font-family: Inter, serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #1E293B
+}
+
+.date_number_active {
+  font-family: Inter, serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #24613B;
+}
+
+.date_text {
+  font-family: Inter, serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 26px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #94A3B8
+}
+
+.date_text_active {
+  font-family: Inter, serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #24613B;
+}
+.container_active {
+  background: #8FBF9F;
+  border-radius: 16px;
+  padding: 0.5rem 0.25rem;
+}
+
+ion-content {
+  --background: #F5ECD7;
+}
