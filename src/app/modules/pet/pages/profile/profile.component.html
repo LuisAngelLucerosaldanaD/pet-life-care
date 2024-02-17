@@ -6,3 +6,40 @@
     <ion-title>Mi Mascota</ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-full min-h-full py-8 px-4 flex flex-col">
+    <div class="relative">
+      <div class="absolute top-0 right-0">
+        <button class="p-2 rounded-lg bg-[rgba(0,0,0,0.4)] text-white hover:bg-white hover:text-black">
+          <ion-icon name="create-outline" size="large"></ion-icon>
+        </button>
+      </div>
+      <ion-img class="rounded-lg overflow-hidden"
+        src="https://th.bing.com/th/id/R.4b954680a57100a74c7eb9340c76c43b?rik=ztjlmucrXhddvw&pid=ImgRaw&r=0"
+      ></ion-img>
+    </div>
+    <div class="w-full flex justify-center h-fit px-4">
+      <div class="w-full h-fit -translate-y-10 flex flex-col gap-2 rounded-lg bg-[#F5ECD7] px-6 py-3 drop-shadow-lg">
+        <div class="w-full h-fit flex justify-between items-end gap-2">
+          <div class="flex flex-col">
+            <span class="text-2xl">Abel</span>
+            <span class="text-xs">Golden Retriever</span>
+          </div>
+          <div class="flex flex-col items-end">
+            <div><ion-icon name="female-outline"></ion-icon></div>
+            <span class="text-xs">3 años y 2 meses</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-1">
+          <ion-icon name="location-outline"></ion-icon>
+          <span class="text-xs">Plaza de Armas de Tingo María</span>
+        </div>
+      </div>
+    </div>
+    <span class="text-center">Ubicación</span>
+    <div class="map w-full rounded overflow-hidden h-[200px] bg-[#F5ECD7]">
+
+    </div>
+  </div>
+</ion-content>
