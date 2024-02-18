@@ -15,6 +15,21 @@
       </ion-fab-button>
     </div>
     <div class="mt-12">
+      <ion-card *ngIf="pets.length === 0">
+        <ion-card-content>
+          <div>
+            <div class="w-full flex justify-center items-center">
+              <div><ion-icon name="paw-outline" size="large"></ion-icon></div>
+            </div>
+            <div class="w-full flex justify-center items-center">
+              <div><span class="text-xl">No tienes mascotas registradas</span></div>
+            </div>
+            <div class="w-full flex justify-center items-center">
+              <div><span class="text-sm">Registra una mascota para poder verla aquí</span></div>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
       <ion-card *ngFor="let pet of pets">
         <ion-card-content>
           <div routerLink="/pet" class="w-full h-full flex gap-4">

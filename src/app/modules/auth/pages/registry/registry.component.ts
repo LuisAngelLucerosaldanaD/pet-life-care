@@ -71,7 +71,7 @@ export class RegistryComponent implements OnDestroy {
       lastnames: this.registerForm.value.lastnames,
       email: this.registerForm.value.email,
       cellphone: this.registerForm.value.cellphone,
-      age: this.registerForm.value.age,
+      age: parseInt(this.registerForm.value.age, 10),
       city: this.registerForm.value.city,
       department: this.registerForm.value.department,
       password: this.registerForm.value.password
@@ -97,6 +97,7 @@ export class RegistryComponent implements OnDestroy {
             color: 'success'
           });
 
+          this.registerForm.reset();
           await toast.present();
           await this._router.navigateByUrl('/login');
         },

@@ -84,6 +84,7 @@ export class LoginComponent implements OnDestroy {
         return;
       }
 
+      this.loginForm.reset();
       await this._storage.set('access_token', res.data.access_token);
       await this._storage.set('user', Utils.decodeToken(res.data.access_token).user);
       await this._router.navigateByUrl('/home');
