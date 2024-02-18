@@ -16,7 +16,7 @@
 
             <ion-card-content [formGroup]="loginForm">
               <div>
-                <ion-input label="Usuario" class="font-mono" labelPlacement="stacked" formControlName="username"></ion-input>
+                <ion-input label="Correo electrónico" type="email" class="font-mono" labelPlacement="stacked" formControlName="email"></ion-input>
               </div>
               <div>
                 <ion-input label="Contraseña" class="font-mono" type="password" labelPlacement="stacked" formControlName="password"></ion-input>
@@ -27,7 +27,7 @@
               </div>
 
               <div class="mt-4 flex justify-end">
-                <ion-button shape="round" color="tertiary"  routerLink="/home" class="w-full font-mono">Sign in</ion-button>
+                <ion-button shape="round" color="tertiary" (click)="login()" class="w-full font-mono">Sign in</ion-button>
               </div>
             </ion-card-content>
           </ion-col>

@@ -15,7 +15,7 @@
       </ion-fab-button>
     </div>
     <div class="mt-12">
-      <ion-card>
+      <ion-card *ngFor="let pet of pets">
         <ion-card-content>
           <div routerLink="/pet" class="w-full h-full flex gap-4">
             <div class="h-48 lg:h-auto rounded text-center overflow-hidden flex-1" style="background-size: cover !important; background: url('https://th.bing.com/th/id/R.4b954680a57100a74c7eb9340c76c43b?rik=ztjlmucrXhddvw&pid=ImgRaw&r=0')">
@@ -23,76 +23,21 @@
             <div class="flex-1 flex flex-col justify-between">
               <div>
                 <div class="w-full flex justify-between items-center">
-                  <div><span class="text-xl font-bold">Abel</span></div>
-                  <div><ion-icon name="female-outline"></ion-icon></div>
+                  <div><span class="text-xl font-bold">{{pet.name}}</span></div>
+                  <div *ngIf="pet.sexo === 'Hembra'"><ion-icon name="female-outline"></ion-icon></div>
+                  <div *ngIf="pet.sexo === 'Macho'"><ion-icon name="male-outline"></ion-icon></div>
                 </div>
                 <div class="w-full flex items-center">
-                  <div><span>Golden retriever</span></div>
+                  <div><span>{{pet.category}} - {{pet.type}}</span></div>
                 </div>
                 <div class="w-full flex items-center">
-                  <div><small>3 años y 2 meses</small></div>
+                  <div><small>{{pet.age}} años, {{pet.weight}} Kg</small></div>
                 </div>
               </div>
               <div>
                 <div class="w-full flex items-center">
                   <ion-icon name="location-outline"></ion-icon>
-                  <div><span class="text-sm">3 años y 2 meses</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <div class="w-full h-full flex gap-4">
-            <div class="h-48 lg:h-auto rounded text-center overflow-hidden flex-1" style="background-size: cover !important; background: url('https://th.bing.com/th/id/R.4b954680a57100a74c7eb9340c76c43b?rik=ztjlmucrXhddvw&pid=ImgRaw&r=0')">
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="text-xl font-bold">Abel</span></div>
-                  <div><ion-icon name="female-outline"></ion-icon></div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><span>Golden retriever</span></div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><small>3 años y 2 meses</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex items-center">
-                  <ion-icon name="location-outline"></ion-icon>
-                  <div><span class="text-sm">3 años y 2 meses</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <div class="w-full h-full flex gap-4">
-            <div class="h-48 lg:h-auto rounded text-center overflow-hidden flex-1" style="background-size: cover !important; background: url('https://th.bing.com/th/id/R.4b954680a57100a74c7eb9340c76c43b?rik=ztjlmucrXhddvw&pid=ImgRaw&r=0')">
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="text-xl font-bold">Abel</span></div>
-                  <div><ion-icon name="female-outline"></ion-icon></div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><span>Golden retriever</span></div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><small>3 años y 2 meses</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex items-center">
-                  <ion-icon name="location-outline"></ion-icon>
-                  <div><span class="text-sm">3 años y 2 meses</span></div>
+                  <div><span class="text-sm">Tingo María</span></div>
                 </div>
               </div>
             </div>

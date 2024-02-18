@@ -5,9 +5,9 @@
       <img src="https://s3-alpha-sig.figma.com/img/d4fd/c64e/fd70f89541b7b8f05c466404e53a1d22?Expires=1708905600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E8uwRZTTETHv1P3yYYrPjmskPVUVgb9OFnv2JS-vO9TD7ItRV5RoiaBkNGLZJtyYfoYZ-VA4ur4U7Lzz6le3Mi2psrNopEUC5DIPDLH~LnwEIgyTMNOHdKawsOn0FgtGWJCLEV-bF4SV-CpfQr8Mk7jicMOmcB10EmQAuXqN4WEDqxFeVYsgDYDL-QX8YcqReK0yvqfDopiCCt--BSBS0nFDfiaVOi9cwW~s4M~nhvpbVV30DA5kUrsAnpOP5rWPRRdesop3ZWLoc3RbTJxwc5LlnHzrvTUVkNB5IzlsBNCBnX7oWzpkhvYLyJ0Lf5kQ5hfW8pNZWyn3j3GEyMvTaA__" alt="user profile">
       <ion-label>
         <h2>
-          Luis Angel Lucero Saldaña
+          {{ user.name + ' ' + user.lastname}}
         </h2>
-        <p>Pet lover</p>
+        <p>+51 {{user.cellphone}}</p>
       </ion-label>
     </div>
     <ion-list lines="none" class="menu-items">

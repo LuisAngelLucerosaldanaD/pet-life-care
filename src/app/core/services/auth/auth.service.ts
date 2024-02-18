@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Login, Registry} from "../../models/request";
 import {Observable} from "rxjs";
 import {Response, Session} from "../../models/response";
+import {CapacitorHttp, HttpOptions, HttpResponse} from "@capacitor/core";
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,14 @@ import {Response, Session} from "../../models/response";
 export class AuthService {
 
   private _baseUrl: string = environment.AUTH_API;
-  private _urlLogin: string = this._baseUrl + '/api/v1/auth/login';
-  private _urlRegistry: string = this._baseUrl + '/api/v1/auth/register';
+  private _urlLogin: string = this._baseUrl + '/api/v1/user/login';
+  private _urlRegistry: string = this._baseUrl + '/api/v1/user';
+
+  private _httpOptions: HttpOptions = {
+    headers: {'Content-Type': 'application/json'},
+    url: '',
+    data: null
+  }
 
   constructor(
     private _http: HttpClient
@@ -24,8 +31,11 @@ export class AuthService {
    * @param data {Login} - Datos para el inicio de sesión (username-password)
    * @return Observable<Response<Session>> - Se obtiene un observable
    */
-  public login(data: Login): Observable<Response<Session>> {
-    return this._http.post<Response<Session>>(this._urlLogin, data);
+  public login(data: Login): Promise<HttpResponse> {
+    this._httpOptions.url = this._urlLogin;
+    this._httpOptions.data = JSON.stringify(data);
+
+    return CapacitorHttp.post(this._httpOptions);
   }
 
   /**

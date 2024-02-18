@@ -6,6 +6,8 @@ import {PetsComponent} from "./pages/pets/pets.component";
 import {IonicModule} from "@ionic/angular";
 import {VeterinaryComponent} from "./pages/veterinary/veterinary.component";
 import {RouterModule} from "@angular/router";
+import {PetsService} from "../../core/services/pets/pets.service";
+import {VeterinaryService} from "../../core/services/veterinary/veterinary.service";
 
 
 
@@ -16,6 +18,7 @@ import {RouterModule} from "@angular/router";
     HomeRoutingModule,
     IonicModule,
     RouterModule
-  ]
+  ],
+  providers: [PetsService, VeterinaryService]
 })
 export class HomeModule { }

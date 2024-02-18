@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true">
   <div class="w-full h-full py-8 px-4">
     <div class="mt-12">
-      <ion-card>
+      <ion-card *ngFor="let veterinary of veterinaries">
         <ion-card-content>
           <div class="w-full h-full flex gap-4">
             <div class="h-48 lg:h-auto rounded text-center overflow-hidden flex-1" style="background-size: cover !important; background: url('assets/vet.png')">
@@ -18,91 +18,23 @@
             <div class="flex-1 flex flex-col justify-between">
               <div>
                 <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Veterinaria San Juan</span></div>
+                  <div><span class="font-bold">{{veterinary.name}}</span></div>
                 </div>
                 <div class="w-full flex items-center text-sm">
-                  <div><span>Raymondi 864, Tingo María 10131</span></div>
+                  <div><span>{{veterinary.address}}</span></div>
                 </div>
                 <div class="w-full flex items-center text-sm">
-                  <div><small>+51 987654321</small></div>
+                  <div><small>+51 {{veterinary.cellphone}}</small></div>
                 </div>
               </div>
               <div>
                 <div class="w-full flex flex-col">
                   <div>Abierto</div>
                   <div class="flex items-center">
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-half-outline"></ion-icon>
-                    <div><span class="ml-1">4.8</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <div class="w-full h-full flex gap-4">
-            <div class="h-48 lg:h-auto rounded text-center overflow-hidden flex-1" style="background-size: cover !important; background: url('assets/vet.png')">
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Veterinaria San Juan</span></div>
-                </div>
-                <div class="w-full flex items-center text-sm">
-                  <div><span>Raymondi 864, Tingo María 10131</span></div>
-                </div>
-                <div class="w-full flex items-center text-sm">
-                  <div><small>+51 987654321</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex flex-col">
-                  <div>Abierto</div>
-                  <div class="flex items-center">
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-half-outline"></ion-icon>
-                    <div><span class="ml-1">4.8</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <div class="w-full h-full flex gap-4">
-            <div class="h-48 lg:h-auto rounded text-center overflow-hidden flex-1" style="background-size: cover !important; background: url('assets/vet.png')">
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Veterinaria San Juan</span></div>
-                </div>
-                <div class="w-full flex items-center text-sm">
-                  <div><span>Raymondi 864, Tingo María 10131</span></div>
-                </div>
-                <div class="w-full flex items-center text-sm">
-                  <div><small>+51 987654321</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex flex-col">
-                  <div>Abierto</div>
-                  <div class="flex items-center">
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-half-outline"></ion-icon>
                     <div><span class="ml-1">4.8</span></div>
                   </div>

@@ -1,5 +1,6 @@
 <ion-content>
-  <div class="w-full h-full flex justify-center items-center py-8 flex-col" style="background: url('https://i.pinimg.com/736x/2b/30/6c/2b306c7f30a52eb50a754bb16139a8fa.jpg')">
+  <div class="w-full h-full flex justify-center items-center py-8 flex-col"
+       style="background: url('https://i.pinimg.com/736x/2b/30/6c/2b306c7f30a52eb50a754bb16139a8fa.jpg')">
 
     <div class="w-full flex justify-center items-end flex-1">
       <ion-card class="w-full">
@@ -11,32 +12,39 @@
 
             <ion-card-content [formGroup]="registerForm">
               <div>
-                <ion-input label="Usuario" class="font-mono" formControlName="names" labelPlacement="stacked"></ion-input>
+                <ion-input label="Nombres" class="font-mono" labelPlacement="stacked"
+                           formControlName="names"></ion-input>
               </div>
               <div>
-                <ion-input label="Nombres" class="font-mono" labelPlacement="stacked"></ion-input>
+                <ion-input label="Apellidos" class="font-mono" labelPlacement="stacked"
+                           formControlName="lastnames"></ion-input>
               </div>
               <div>
-                <ion-input label="Apellidos" class="font-mono"  labelPlacement="stacked"></ion-input>
+                <ion-input label="Edad" class="font-mono" type="numeric" labelPlacement="stacked"
+                           formControlName="age"></ion-input>
               </div>
               <div>
-                <ion-input label="Edad" class="font-mono" type="numeric" labelPlacement="stacked"></ion-input>
+                <ion-input label="Correo electrónico" class="font-mono" type="email" labelPlacement="stacked"
+                           formControlName="email"></ion-input>
               </div>
               <div>
-                <ion-input label="Dirección" class="font-mono" labelPlacement="stacked"></ion-input>
+                <ion-input label="Telefono - Celular" class="font-mono" type="tel" labelPlacement="stacked"
+                           formControlName="cellphone"></ion-input>
               </div>
               <div>
-                <ion-input label="Correo electrónico" class="font-mono" type="email" labelPlacement="stacked"></ion-input>
+                <ion-input label="Contraseña" class="font-mono" type="password" labelPlacement="stacked"
+                           formControlName="password"></ion-input>
               </div>
               <div>
-                <ion-input label="Telefono - Celular" class="font-mono" type="tel" labelPlacement="stacked"></ion-input>
+                <ion-input label="Ciudad" class="font-mono" labelPlacement="stacked" formControlName="city"></ion-input>
               </div>
               <div>
-                <ion-input label="Contraseña" class="font-mono" type="password" labelPlacement="stacked"></ion-input>
+                <ion-input label="Departamento" class="font-mono" labelPlacement="stacked"
+                           formControlName="department"></ion-input>
               </div>
-
               <div class="mt-4 flex justify-end">
-                <ion-button shape="round" color="tertiary"  routerLink="/tabs" class="w-full font-mono">Sign up</ion-button>
+                <ion-button shape="round" color="tertiary" (click)="registry()" class="w-full font-mono">Sign up
+                </ion-button>
               </div>
             </ion-card-content>
           </ion-col>

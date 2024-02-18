@@ -32,7 +32,8 @@ export class RegistryComponent implements OnDestroy {
       cellphone: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
       password: ['', Validators.required],
       age: ['', Validators.required],
-      address: ['', Validators.required]
+      city: ['', Validators.required],
+      department: ['', Validators.required],
     });
   }
 
@@ -71,7 +72,9 @@ export class RegistryComponent implements OnDestroy {
       email: this.registerForm.value.email,
       cellphone: this.registerForm.value.cellphone,
       age: this.registerForm.value.age,
-      address: this.registerForm.value.address
+      city: this.registerForm.value.city,
+      department: this.registerForm.value.department,
+      password: this.registerForm.value.password
     };
     this._subscriptions.add(
       this._authService.registry(data).subscribe({
@@ -95,7 +98,7 @@ export class RegistryComponent implements OnDestroy {
           });
 
           await toast.present();
-          await this._router.navigateByUrl('/');
+          await this._router.navigateByUrl('/login');
         },
         error: async (err: HttpErrorResponse) => {
           const toast = await this._toastController.create({

@@ -1,5 +1,5 @@
 export interface Login {
-  username: string;
+  email: string;
   password: string;
 }
 
@@ -8,6 +8,8 @@ export interface Registry {
   lastnames: string;
   email: string;
   cellphone: string;
+  password: string;
   age: number;
-  address: string;
+  city: string;
+  department: string;
 }

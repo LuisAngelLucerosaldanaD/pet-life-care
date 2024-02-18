@@ -6,6 +6,9 @@ import {Login} from "../../../../core/models/request";
 import {HttpErrorResponse} from "@angular/common/http";
 import {LoadingController, ToastController} from "@ionic/angular";
 import {Router} from "@angular/router";
+import { Storage } from '@ionic/storage-angular';
+import {Response, Session} from "../../../../core/models/response";
+import {Utils} from "../../../../core/utils/utils";
 
 @Component({
   selector: 'app-login',
@@ -15,8 +18,6 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnDestroy {
 
   private _subscriptions: Subscription = new Subscription();
-
-  public isLoading: boolean = false;
   public loginForm: FormGroup;
 
   constructor(
@@ -24,10 +25,11 @@ export class LoginComponent implements OnDestroy {
     private _fb: FormBuilder,
     private _toastController: ToastController,
     private _router: Router,
-    private _loadingController: LoadingController
+    private _loadingController: LoadingController,
+    private _storage: Storage
   ) {
     this.loginForm = this._fb.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
@@ -62,41 +64,42 @@ export class LoginComponent implements OnDestroy {
     const indicator = await this.loadingIndicator();
 
     const data: Login = {
-      username: this.loginForm.value.username,
+      email: this.loginForm.value.email,
       password: this.loginForm.value.password
     };
-    this._subscriptions.add(
-      this._authService.login(data).subscribe({
-        next: async (res) => {
-          await indicator.dismiss();
-          if (res.error) {
-            const toast = await this._toastController.create({
-              message: res.msg,
-              duration: 3000,
-              position: 'top',
-              color: 'danger'
-            });
-            await toast.present();
-            return;
-          }
 
-          await this._router.navigateByUrl('/tabs');
-          return;
-        },
-        error: async (err: HttpErrorResponse) => {
-          const toast = await this._toastController.create({
-            message: 'No se pudo iniciar seción, intente nuevamente!',
-            duration: 3000,
-            position: 'top',
-            color: 'danger'
-          });
-          await indicator.dismiss();
-          await toast.present();
-          console.error(err);
-          return;
-        }
-      })
-    );
+    try {
+      const resWs = await this._authService.login(data);
+
+      const res = resWs.data as Response<Session>;
+      await indicator.dismiss();
+      if (res.error) {
+        const toast = await this._toastController.create({
+          message: res.msg,
+          duration: 3000,
+          position: 'top',
+          color: 'danger'
+        });
+        await toast.present();
+        return;
+      }
+
+      await this._storage.set('access_token', res.data.access_token);
+      await this._storage.set('user', Utils.decodeToken(res.data.access_token).user);
+      await this._router.navigateByUrl('/home');
+      return;
+    } catch (err) {
+      const toast = await this._toastController.create({
+        message: 'No se pudo iniciar seción, intente nuevamente!',
+        duration: 3000,
+        position: 'top',
+        color: 'danger'
+      });
+      await indicator.dismiss();
+      await toast.present();
+      console.error(err);
+      return;
+    }
 
   }
 

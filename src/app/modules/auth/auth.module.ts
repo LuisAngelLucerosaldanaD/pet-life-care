@@ -7,6 +7,7 @@ import {AuthComponent} from './auth.component';
 import {RegistryComponent} from './pages/registry/registry.component';
 import {AuthRoutingModule} from './auth-routing.module';
 import {AuthService} from "../../core/services/auth/auth.service";
+import {StorageService} from "../../core/services/storage/storage.service";
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import {AuthService} from "../../core/services/auth/auth.service";
     ReactiveFormsModule
   ],
   declarations: [LoginComponent, AuthComponent, RegistryComponent],
-  providers: [AuthService]
+  providers: [AuthService, StorageService]
 })
 export class AuthModule {
 }
