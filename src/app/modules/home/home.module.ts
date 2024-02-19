@@ -8,17 +8,19 @@ import {VeterinaryComponent} from "./pages/veterinary/veterinary.component";
 import {RouterModule} from "@angular/router";
 import {PetsService} from "../../core/services/pets/pets.service";
 import {VeterinaryService} from "../../core/services/veterinary/veterinary.service";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
 @NgModule({
   declarations: [HomeComponent, PetsComponent, VeterinaryComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    IonicModule,
-    RouterModule
-  ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        IonicModule,
+        RouterModule,
+        ReactiveFormsModule
+    ],
   providers: [PetsService, VeterinaryService]
 })
 export class HomeModule { }

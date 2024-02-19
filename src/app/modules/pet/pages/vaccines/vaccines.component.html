@@ -10,40 +10,27 @@
 <ion-content [fullscreen]="true">
   <div class="w-full h-full py-8 px-4">
     <div class="w-full flex justify-end items-center">
-      <ion-fab-button>
+      <ion-fab-button id="open-modal">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </div>
     <div class="mt-12">
-      <ion-card>
+      <ion-card *ngIf="vaccines.length === 0">
         <ion-card-content>
-          <div class="w-full h-full flex gap-4 items-center">
-            <div class="h-20 w-20 lg:h-auto rounded text-center overflow-hidden"
-                 style="background-size: cover !important; background: url('assets/img_1.png')">
+          <div>
+            <div class="w-full flex justify-center items-center">
+              <div><ion-icon name="eyedrop-outline" size="large"></ion-icon></div>
             </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Distemper</span></div>
-                  <div>
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                  </div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><small>Veterinaria San Miguel</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex items-center justify-between">
-                  <small style="font-size: 12px">Dr. Abel Silva</small>
-                  <small style="font-size: 12px">14/02/2024</small>
-                </div>
-              </div>
+            <div class="w-full flex justify-center items-center">
+              <div><span class="text-xl">Tu mascota no tiene vacunas registradas</span></div>
+            </div>
+            <div class="w-full flex justify-center items-center">
+              <div><span class="text-sm">Registra una vacuna para tu mascota</span></div>
             </div>
           </div>
         </ion-card-content>
       </ion-card>
-      <ion-card>
+      <ion-card *ngFor="let vaccine of vaccines">
         <ion-card-content>
           <div class="w-full h-full flex gap-4 items-center">
             <div class="h-20 w-20 lg:h-auto rounded text-center overflow-hidden"
@@ -52,103 +39,19 @@
             <div class="flex-1 flex flex-col justify-between">
               <div>
                 <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Distemper</span></div>
+                  <div><span class="font-bold">{{vaccine.name}}</span></div>
                   <div>
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                   </div>
                 </div>
                 <div class="w-full flex items-center">
-                  <div><small>Veterinaria San Miguel</small></div>
+                  <div><small>{{vaccine.veterinary}}</small></div>
                 </div>
               </div>
               <div>
                 <div class="w-full flex items-center justify-between">
-                  <small style="font-size: 12px">Dr. Abel Silva</small>
-                  <small style="font-size: 12px">14/02/2024</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <div class="w-full h-full flex gap-4 items-center">
-            <div class="h-20 w-20 lg:h-auto rounded text-center overflow-hidden"
-                 style="background-size: cover !important; background: url('assets/img_1.png')">
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Distemper</span></div>
-                  <div>
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                  </div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><small>Veterinaria San Miguel</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex items-center justify-between">
-                  <small style="font-size: 12px">Dr. Abel Silva</small>
-                  <small style="font-size: 12px">14/02/2024</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <div class="w-full h-full flex gap-4 items-center">
-            <div class="h-20 w-20 lg:h-auto rounded text-center overflow-hidden"
-                 style="background-size: cover !important; background: url('assets/img_1.png')">
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Distemper</span></div>
-                  <div>
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                  </div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><small>Veterinaria San Miguel</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex items-center justify-between">
-                  <small style="font-size: 12px">Dr. Abel Silva</small>
-                  <small style="font-size: 12px">14/02/2024</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <div class="w-full h-full flex gap-4 items-center">
-            <div class="h-20 w-20 lg:h-auto rounded text-center overflow-hidden"
-                 style="background-size: cover !important; background: url('assets/img_1.png')">
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <div class="w-full flex justify-between items-center">
-                  <div><span class="font-bold">Distemper</span></div>
-                  <div>
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                  </div>
-                </div>
-                <div class="w-full flex items-center">
-                  <div><small>Veterinaria San Miguel</small></div>
-                </div>
-              </div>
-              <div>
-                <div class="w-full flex items-center justify-between">
-                  <small style="font-size: 12px">Dr. Abel Silva</small>
-                  <small style="font-size: 12px">14/02/2024</small>
+                  <small style="font-size: 12px">{{vaccine.doctor}}</small>
+                  <small style="font-size: 12px">{{vaccine.created_at | date: 'medium': 'UTC'}}</small>
                 </div>
               </div>
             </div>
@@ -157,4 +60,39 @@
       </ion-card>
     </div>
   </div>
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Crear Vacuna</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div>
+          <form [formGroup]="vaccineForm" (ngSubmit)="createVaccine()">
+            <ion-item>
+              <ion-input label="Nombre" labelPlacement="floating" formControlName="name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Doctor" labelPlacement="floating" formControlName="doctor" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-select label="Veterinaria" label-placement="floating" formControlName="veterinary">
+                <ion-select-option value="1">Clínica Veterinaria Dr. Hidalgo</ion-select-option>
+                <ion-select-option value="2">Mi Torito</ion-select-option>
+                <ion-select-option value="3">Agrovet El Ganadero</ion-select-option>
+                <ion-select-option value="4">Veterinaria Vetspa</ion-select-option>
+                <ion-select-option value="5">Veterinaria Entre Patas y Pelos</ion-select-option>
+                <ion-select-option value="6">Veterinaria San Miguel</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-button type="submit" expand="block" color="tertiary">Crear</ion-button>
+          </form>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

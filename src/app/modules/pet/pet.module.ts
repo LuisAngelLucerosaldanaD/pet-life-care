@@ -9,6 +9,8 @@ import {VaccinesComponent} from "./pages/vaccines/vaccines.component";
 import {StatisticsComponent} from "./pages/statistics/statistics.component";
 import {NgApexchartsModule} from "ng-apexcharts";
 import {CalendarComponent} from "./pages/calendar/calendar.component";
+import {PetsService} from "../../core/services/pets/pets.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -24,8 +26,11 @@ import {CalendarComponent} from "./pages/calendar/calendar.component";
     PetRoutingModule,
     IonicModule,
     RouterModule,
-    NgApexchartsModule
-  ]
+    NgApexchartsModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [PetsService]
 })
 export class PetModule {
 }

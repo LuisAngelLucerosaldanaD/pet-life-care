@@ -7,10 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="w-full min-h-full py-8 px-4">
+<ion-content [fullscreen]="true" class="ion-page">
+  <div class="w-full min-h-full py-8 px-4 mt-8">
     <div class="w-full flex justify-end items-center">
-      <ion-fab-button>
+      <ion-fab-button id="open-modal">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </div>
@@ -32,7 +32,7 @@
       </ion-card>
       <ion-card *ngFor="let pet of pets">
         <ion-card-content>
-          <div routerLink="/pet" class="w-full h-full flex gap-4">
+          <div (click)="selectPet(pet)" class="w-full h-full flex gap-4">
             <div class="h-48 lg:h-auto rounded text-center overflow-hidden flex-1" style="background-size: cover !important; background: url('https://th.bing.com/th/id/R.4b954680a57100a74c7eb9340c76c43b?rik=ztjlmucrXhddvw&pid=ImgRaw&r=0')">
             </div>
             <div class="flex-1 flex flex-col justify-between">
@@ -64,4 +64,61 @@
   <!--<ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>-->
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Crear Mascota</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div>
+          <form [formGroup]="petForm" (ngSubmit)="createPet()">
+            <ion-item>
+              <ion-input label="Nombre" labelPlacement="floating" formControlName="name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Edad" labelPlacement="floating" formControlName="age" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Peso" labelPlacement="floating" formControlName="weight" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-select label="Tipo" label-placement="floating" formControlName="type">
+                <ion-select-option value="Domestica">Domestica</ion-select-option>
+                <ion-select-option value="Exótica">Exótica</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-select label="Categoria" label-placement="floating" formControlName="category">
+                <ion-select-option value="Perro">Perro</ion-select-option>
+                <ion-select-option value="Gato">Gato</ion-select-option>
+                <ion-select-option value="Conejo">Conejo</ion-select-option>
+                <ion-select-option value="Ave">Ave</ion-select-option>
+                <ion-select-option value="Iguana">Iguana</ion-select-option>
+                <ion-select-option value="Tortuga">Tortuga</ion-select-option>
+                <ion-select-option value="Pez">Pez</ion-select-option>
+                <ion-select-option value="Araña">Araña</ion-select-option>
+                <ion-select-option value="Serpiente">Serpiente</ion-select-option>
+                <ion-select-option value="Loro">Loro</ion-select-option>
+                <ion-select-option value="Capibara">Capibara</ion-select-option>
+                <ion-select-option value="Capibara">Hamster</ion-select-option>
+                <ion-select-option value="Otro">Otro</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-select label="Sexo" label-placement="floating" formControlName="sex">
+                <ion-select-option value="Macho">Macho</ion-select-option>
+                <ion-select-option value="Hembra">Hembra</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-button type="submit" expand="block" color="tertiary">Crear</ion-button>
+          </form>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

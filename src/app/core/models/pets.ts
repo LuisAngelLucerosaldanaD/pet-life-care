@@ -10,3 +10,14 @@ export interface Pet {
   user: number;
   weight: number;
 }
+
+
+export interface PetBody {
+  name: string;
+  category: string;
+  age: number;
+  weight: number;
+  sex: string;
+  user: number;
+  type: string;
+}

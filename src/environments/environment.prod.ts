@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  AUTH_API: 'http://127.0.0.1:2014'
+  AUTH_API: 'https://banco-bjungle-dev-ekyc-core.btigersystem.net'
 };
