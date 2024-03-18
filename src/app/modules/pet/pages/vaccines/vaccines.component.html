@@ -1,7 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <button class="flex justify-center items-center" (click)="window.history.back()">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+        <span>Back</span>
+      </button>
     </ion-buttons>
     <ion-title>Mis Vacunas</ion-title>
   </ion-toolbar>
@@ -10,7 +13,7 @@
 <ion-content [fullscreen]="true">
   <div class="w-full h-full py-8 px-4">
     <div class="w-full flex justify-end items-center">
-      <ion-fab-button id="open-modal">
+      <ion-fab-button id="open-modal-vac">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </div>
@@ -60,7 +63,7 @@
       </ion-card>
     </div>
   </div>
-  <ion-modal trigger="open-modal">
+  <ion-modal trigger="open-modal-vac">
     <ng-template>
       <ion-header>
         <ion-toolbar>

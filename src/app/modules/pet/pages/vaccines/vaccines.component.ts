@@ -141,4 +141,5 @@ export class VaccinesComponent implements OnInit {
     return loadingIndicator;
   }
 
+  protected readonly window = window;
 }

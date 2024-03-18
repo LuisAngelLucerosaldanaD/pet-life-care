@@ -45,4 +45,5 @@ export class StatisticsComponent {
     };
   }
 
+    protected readonly window = window;
 }

@@ -9,4 +9,5 @@ export class CalendarComponent {
 
   constructor() { }
 
+    protected readonly window = window;
 }

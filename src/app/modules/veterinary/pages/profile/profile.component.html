@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <button class="flex justify-center items-center" (click)="window.history.back()">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+        <span>Back</span>
+      </button>
+    </ion-buttons>
+    <ion-title>Veterinaria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-full min-h-full py-8 px-4 flex flex-col">
+    <div class="relative">
+      <ion-img class="rounded-lg overflow-hidden"
+               [src]="veterinary.logo || 'assets/logos/vet.jpeg'"
+      ></ion-img>
+    </div>
+    <div class="w-full flex justify-center h-fit px-4">
+      <div class="w-full h-fit -translate-y-10 flex flex-col gap-2 rounded-lg bg-[#F5ECD7] px-6 py-3 drop-shadow-lg">
+        <div class="w-full h-fit flex justify-between items-end gap-2">
+          <div class="flex flex-col">
+            <span class="text-2xl">{{ veterinary.name }}</span>
+            <span class="text-xs">{{ veterinary.description }}</span>
+          </div>
+        </div>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-1">
+            <ion-icon name="mail-outline"></ion-icon>
+            <span class="text-xs">{{ veterinary.email || ' - ' }}</span>
+          </div>
+          <div *ngIf="false" class="flex items-center gap-1">
+            <ion-icon name="location-outline"></ion-icon>
+            <span class="text-xs">{{ veterinary.address }}</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <ion-icon name="call-outline"></ion-icon>
+            <span class="text-xs">{{ veterinary.cellphone }}</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <ion-icon name="globe-outline"></ion-icon>
+          <a [href]="veterinary.web_page"><span class="text-xs">Página web</span></a>
+        </div>
+
+      </div>
+    </div>
+    <span class="text-center">Ubicación</span>
+    <div class="map w-full rounded overflow-hidden h-[200px] bg-[#F5ECD7]">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.454838537747!2d-76.00392661509376!3d-9.292904172965029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a64176757043eb%3A0x100d1d4178deaa3!2sCl%C3%ADnica%20veterinaria%20Dr.%20Hidalgo!5e0!3m2!1ses-419!2spe!4v1710798961758!5m2!1ses-419!2spe"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</ion-content>

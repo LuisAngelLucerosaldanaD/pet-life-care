@@ -3,6 +3,8 @@ import {VeterinaryService} from "../../../../core/services/veterinary/veterinary
 import {Veterinary} from "../../../../core/models/veterinary";
 import {Response} from "../../../../core/models/response";
 import {LoadingController, ToastController} from "@ionic/angular";
+import {StorageService} from "../../../../core/services/storage/storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-veterinary',
@@ -16,7 +18,9 @@ export class VeterinaryComponent implements OnInit {
   constructor(
     private _veterinaryService: VeterinaryService,
     private _loadingController: LoadingController,
-    private _toastController: ToastController
+    private _toastController: ToastController,
+    private _storageService: StorageService,
+    private _router: Router
   ) {
   }
   ngOnInit() {
@@ -56,6 +60,11 @@ export class VeterinaryComponent implements OnInit {
       return;
     }
   }
+
+  public async selectVeterinary(vet: Veterinary): Promise<void> {
+    this._storageService.set('vet', vet);
+    await this._router.navigateByUrl('/veterinary')
+  };
 
 
   /**
